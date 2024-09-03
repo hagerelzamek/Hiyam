@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "title": "Experince the essence of nature",
+    "subtitle": "Natural<br />Glow",
+    "image": "/assets/img/image-slider/heroimg.png",
+    "url": "/shop-grid-standard"
+  },
+  {
+    "id": 2,
+    "title": "Cosmetic Best Selling",
+    "subtitle": "Fashion  <br /> Cosmetic",
+    "image": "/assets/img/image-slider/heroimg.png",
+    "url": "/shop-grid-standard"
+  }
+]

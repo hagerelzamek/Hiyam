@@ -1,0 +1,16 @@
+[
+  {
+    "id": "1",
+    "image": "/assets/img/testimonial/testi-1.png",
+    "content": "iceriginin dogal olusu almamda etken oldu. uzun zamandir boyle bir ürün arayişi icerisindeydim.birkacgundur kullaniyo olmama ragmen cildimdeki isilti ve gerginlik farkediliyor ayrica hizli kargo ve ozenli paketleme icin cok tesekkur ederim.",
+    "customerName": "Grace Alvarado",
+    "title": "customer"
+  },
+  {
+    "id": "2",
+    "image": "/assets/img/testimonial/testi-1.png",
+    "content": "Henüz kullanmadım ama ürün iki günde elime ulaştı, paketlemsi çok güzel, hediye için teşekkür ederim 😍 kokusu harika..",
+    "customerName": "Rahma",
+    "title": "customer"
+  }
+]

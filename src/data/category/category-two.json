@@ -1,0 +1,37 @@
+[
+  {
+    "id": "1",
+    "image": "/assets/img/product/cata3.jpg",
+  
+    "title": "Serums",
+    "link": "/shop-grid-standard"
+  },
+  {
+    "id": "2",
+    "image": "/assets/img/product/catag1.jpg",
+   
+    "title": "Tonics",
+    "link": "/shop-grid-standard"
+  },
+  {
+    "id": "3",
+    "image": "/assets/img/product/cata2.jpg",
+   
+    "title": "Face Creams",
+    "link": "/shop-grid-standard"
+  },
+  {
+    "id": "4",
+    "image": "/assets/img/product/cata4.jpg",
+   
+    "title": "Cleansers",
+    "link": "/shop-grid-standard"
+  },
+  {
+    "id": "5",
+    "image": "/assets/img/product/cata5.jpg",
+    
+    "title": "Sunscreen Creams",
+    "link": "/shop-grid-standard"
+  }
+]

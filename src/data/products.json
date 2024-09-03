@@ -1,0 +1,268 @@
+[
+  
+  {
+    "id": "60",
+    "sku": "asdf182",
+    "name": "Hiyam Tonic",
+    "price": 3.5,
+    "discount": 10,
+    "new": true,
+    "rating": 3,
+    "saleCount": 20,
+    "category": ["cosmetics"],
+    "tag": ["cosmetics"],
+    "stock": 20,
+    "image": [
+      "/assets/img/product/cosmetics/tonik.jpg",
+      "/assets/img/product/cosmetics/46.jpg",
+      "/assets/img/product/cosmetics/13.jpg",
+      "/assets/img/product/cosmetics/15.jpg",
+      "/assets/img/product/cosmetics/5.jpg"
+    ],
+    "shortDescription": "Formulated with potent plant extracts, active ingredients, and vitamins, Hiyam Tonic nourishes and brightens the skin, minimizes the appearance of pores, and helps reduce the visibility of wrinkles.",
+    "fullDescription": "Formulated with potent plant extracts, active ingredients, and vitamins, Hiyam Tonic nourishes and brightens the skin, minimizes the appearance of pores, and helps reduce the visibility of wrinkles. Usage: Apply to cleansed skin by spraying or using a cotton pad. Warnings: Store in a cool, dry place out of reach of children. Test on a small area before use.Ingredients: Niacinamide (B3), Seaweed Extract, Hyaluronic Acid, Immortelle Flower Extract, Laminaria Digitata, Sodium Hyaluronate, Helichrysum Italicum Flower Oil",
+     "productWeight":"4"
+  },
+  {
+    "id": "61",
+    "sku": "asdf183",
+    "name": "Face Cleansing Gel 200ml",
+    "price": 18.5,
+    "discount": 15,
+    "new": false,
+    "rating": 5,
+    "saleCount": 9,
+    "category": ["cosmetics"],
+    "tag": ["cosmetics"],
+    "stock": 20,
+    "image": [
+      "/assets/img/product/cosmetics/temizleme.jpg",
+      "/assets/img/product/cosmetics/24.jpg",
+      "/assets/img/product/cosmetics/36.jpg",
+      "/assets/img/product/cosmetics/20.jpg",
+      "/assets/img/product/cosmetics/6.jpg"
+    ],
+    "shortDescription": "Usage: Apply a sufficient amount of gel to your palm and gently massage it onto your damp face in circular motions, both morning and evening. Rinse thoroughly with plenty of water. Warnings: Store in a cool, dry place out of reach of children. Perform a patch test before first use. Avoid contact with eyes. Ingredients: Aqua, Coco-Glucoside, Glycerin, Rosa Damascena Flower Water, Chamomilla Recutita Flower Water, Cocamidopropyl Betaine, Cucumis Sativus Fruit Extract, Camellia Sinensis Leaf Extract, Avena Sativa Kernel Extract, Xanthan Gum, Hydrolyzed Silk, Panthenol, Allantoin, Tocopheryl Acetate, Lactic Acid, Benzyl Alcohol, Lavandula Angustifolia Flower Oil, Pelargonium Graveolens Flower Oil, Dehydroacetic Acid, Sodium Benzoate, Potassium Sorbate.",
+    "fullDescription": "Usage: Apply a sufficient amount of gel to your palm and gently massage it onto your damp face in circular motions, both morning and evening. Rinse thoroughly with plenty of water. Warnings: Store in a cool, dry place out of reach of children. Perform a patch test before first use. Avoid contact with eyes. Ingredients: Aqua, Coco-Glucoside, Glycerin, Rosa Damascena Flower Water, Chamomilla Recutita Flower Water, Cocamidopropyl Betaine, Cucumis Sativus Fruit Extract, Camellia Sinensis Leaf Extract, Avena Sativa Kernel Extract, Xanthan Gum, Hydrolyzed Silk, Panthenol, Allantoin, Tocopheryl Acetate, Lactic Acid, Benzyl Alcohol, Lavandula Angustifolia Flower Oil, Pelargonium Graveolens Flower Oil, Dehydroacetic Acid, Sodium Benzoate, Potassium Sorbate."
+  },
+  {
+    "id": "62",
+    "sku": "asdf184",
+    "name": "Hiyam Whitening & Pore Tightening Serum",
+    "price": 4.2,
+    "discount": 15,
+    "new": true,
+    "rating": 5,
+    "saleCount": 29,
+    "category": ["cosmetics"],
+    "tag": ["cosmetics"],
+    "stock": 20,
+    "image": [
+      "/assets/img/product/cosmetics/beyazlatici.jpg",
+      "/assets/img/product/cosmetics/19.jpg",
+      "/assets/img/product/cosmetics/42.jpg",
+      "/assets/img/product/cosmetics/17.jpg",
+      "/assets/img/product/cosmetics/1.jpg"
+    ],
+    "shortDescription": "Hiyam Whitening & Pore Tightening Serum is designed with ingredients like arbutin, vitamin C (sodium ascorbyl phosphate), niacinamide (B3), panthenol (B5), hyaluronic acid (sodium hyaluronate), licorice root extract (glycyrrhiza glabra), mulberry extract (morus alba), and pear peel extract (pyrus communis fruit) to help reduce the appearance of spots and pores for a brighter complexion and to prevent the formation of new spots. With regular use, it helps to brighten the skin tone, achieve a more transparent skin structure, reduce the visibility of dark spots and pores, and enhance skin quality for a flawless appearance.",
+    "fullDescription": "Hiyam Whitening & Pore Tightening Serum is designed with ingredients like arbutin, vitamin C (sodium ascorbyl phosphate), niacinamide (B3), panthenol (B5), hyaluronic acid (sodium hyaluronate), licorice root extract (glycyrrhiza glabra), mulberry extract (morus alba), and pear peel extract (pyrus communis fruit) to help reduce the appearance of spots and pores for a brighter complexion and to prevent the formation of new spots. With regular use, it helps to brighten the skin tone, achieve a more transparent skin structure, reduce the visibility of dark spots and pores, and enhance skin quality for a flawless appearance. It is recommended for night use.Usage: Apply to cleansed and toned skin with circular massage movements.Warnings: Store in a cool, dry place out of reach of children. Test on a small area before use. Avoid contact with eyes. Sunscreen must be used during the day."
+  },
+  {
+    "id": "63",
+    "sku": "asdf185",
+    "name": "Hiyam Meso Soothing Elixir Serum",
+    "price": 1.5,
+    "discount": 0,
+    "new": false,
+    "rating": 4,
+    "saleCount": 20,
+    "category": ["cosmetics"],
+    "tag": ["cosmetics"],
+    "stock": 10,
+    "image": [
+      "/assets/img/product/cosmetics/meso.jpg",
+      "/assets/img/product/cosmetics/47.jpg",
+      "/assets/img/product/cosmetics/37.jpg",
+      "/assets/img/product/cosmetics/23.jpg",
+      "/assets/img/product/cosmetics/34.jpg"
+    ],
+    "shortDescription": "Meso Soothing Elixir Serum is formulated with plant extracts, Peptide Complex, B5 (Panthenol), and both small and large molecule hyaluronic acid (Sodium Hyaluronate) to help soothe sensitive skin prone to irritation and reduce the appearance of wrinkles.",
+    "fullDescription": "Meso Soothing Elixir Serum is formulated with plant extracts, Peptide Complex, B5 (Panthenol), and both small and large molecule hyaluronic acid (Sodium Hyaluronate) to help soothe sensitive skin prone to irritation and reduce the appearance of wrinkles.Usage: Apply to cleansed and toned skin by massaging in circular motions. Warnings: Store in a cool, dry place, out of reach of children. Test on a small area before use. Avoid contact with eyes. Ingredients: Peptide Complex, Centella Asiatica, Boswellia Serrata, Glycyrrhiza Glabra (Licorice Root), Gotu Kola, Frankincense."
+  },
+  {
+    "id": "64",
+    "sku": "asdf186",
+    "name": "Hiyam Peptide Complex Eye Contour Serum",
+    "price": 6.3,
+    "discount": 15,
+    "new": true,
+    "rating": 5,
+    "saleCount": 20,
+    "category": ["cosmetics"],
+    "tag": ["cosmetics"],
+    "stock": 20,
+    "image": [
+      "/assets/img/product/cosmetics/peptide.jpg",
+      "/assets/img/product/cosmetics/6.jpg",
+      "/assets/img/product/cosmetics/45.jpg",
+      "/assets/img/product/cosmetics/7.jpg",
+      "/assets/img/product/cosmetics/5.jpg"
+    ],
+    "shortDescription": "Hiyam Peptide Complex Eye Contour Serum helps nourish, moisturize, firm the skin around the eyes, even out skin tone, and reduce signs of aging. Enriched with a peptide complex to support collagen production, it targets skin firmness and elasticity. Additionally, Arbutin, Vitamin C (Sodium Ascorbyl Phosphate), Niacinamide (B3), Caffeine, and botanical extracts work together to help even out the skin tone. It is recommended for nighttime use.",
+    "fullDescription": "Hiyam Peptide Complex Eye Contour Serum helps nourish, moisturize, firm the skin around the eyes, even out skin tone, and reduce signs of aging. Enriched with a peptide complex to support collagen production, it targets skin firmness and elasticity. Additionally, Arbutin, Vitamin C (Sodium Ascorbyl Phosphate), Niacinamide (B3), Caffeine, and botanical extracts work together to help even out the skin tone. It is recommended for nighttime use. Usage: Apply to cleansed and toned skin with circular massage movements. Warnings: Store in a cool, dry place, out of reach of children. Test on a small area before use. Avoid contact with eyes. Sunscreen should be used during the day."
+  },
+  {
+    "id": "65",
+    "sku": "asdf187",
+    "name": "Hiyam Radiance - Anti-Aging Serum",
+    "price": 4.5,
+    "discount": 20,
+    "new": false,
+    "rating": 2,
+    "saleCount": 29,
+    "category": ["cosmetics"],
+    "tag": ["cosmetics"],
+    "stock": 20,
+    "image": [
+      "/assets/img/product/cosmetics/isitli.jpg",
+      "/assets/img/product/cosmetics/29.jpg",
+      "/assets/img/product/cosmetics/30.jpg",
+      "/assets/img/product/cosmetics/35.jpg",
+      "/assets/img/product/cosmetics/25.jpg"
+    ],
+    "shortDescription": "Thanks to the Hyaluronic Acid and Collagen in its formula, Hiyam Radiance - Anti-Aging Serum plumps the skin with moisture, creating a translucent and firm appearance. It also helps to brighten and even out the skin tone, giving it a firmer and more vibrant look with Niacinamide (B3), Stable Vitamin C (Sodium Ascorbyl Phosphate), Licorice Root Extract (Glycyrrhiza Glabra), Green Tea Extract (Camellia Sinensis), and Oat Extract (Avena Sativa).",
+    "fullDescription": "Thanks to the Hyaluronic Acid and Collagen in its formula, Hiyam Radiance - Anti-Aging Serum plumps the skin with moisture, creating a translucent and firm appearance. It also helps to brighten and even out the skin tone, giving it a firmer and more vibrant look with Niacinamide (B3), Stable Vitamin C (Sodium Ascorbyl Phosphate), Licorice Root Extract (Glycyrrhiza Glabra), Green Tea Extract (Camellia Sinensis), and Oat Extract (Avena Sativa). Usage: Apply to cleansed and toned skin with circular massage movements. Warnings: Store in a cool, dry place, out of reach of children. Test on a small area before use. Avoid contact with eyes."
+  },
+  {
+    "id": "66",
+    "sku": "asdf188",
+    "name": "Hiyam Anti-Aging Moisturizing Day Face Cream",
+    "price": 7.1,
+    "discount": 45,
+    "new": true,
+    "rating": 4,
+    "saleCount": 10,
+    "category": ["cosmetics"],
+    "tag": ["cosmetics"],
+    "stock": 20,
+    "image": [
+      "/assets/img/product/cosmetics/yaslanmakremi.jpg",
+      "/assets/img/product/cosmetics/22.jpg",
+      "/assets/img/product/cosmetics/27.jpg",
+      "/assets/img/product/cosmetics/26.jpg",
+      "/assets/img/product/cosmetics/14.jpg"
+    ],
+    "shortDescription": "Ingredients: Niacinamide (B3), Panthenol (B5), Peptide Complex, Hibiscus (Hibiscus Sabdariffa Flower Extract), Pea (Pisum Sativum Extract) Usage: Apply to cleansed, toned, and serum-applied skin with a gentle massage. Warnings: Store in a cool, dry place out of reach of children. Test on a small area before use. Avoid contact with eyes.",
+    "fullDescription": "Ingredients: Niacinamide (B3), Panthenol (B5), Peptide Complex, Hibiscus (Hibiscus Sabdariffa Flower Extract), Pea (Pisum Sativum Extract) Usage: Apply to cleansed, toned, and serum-applied skin with a gentle massage. Warnings: Store in a cool, dry place out of reach of children. Test on a small area before use. Avoid contact with eyes."
+  },
+  {
+    "id": "67",
+    "sku": "asdf189",
+    "name": "Hiyam Anti-Aging Moisturizing Night Face Cream",
+    "price": 9.0,
+    "discount": 10,
+    "new": false,
+    "rating": 4,
+    "saleCount": 29,
+    "category": ["cosmetics"],
+    "tag": ["cosmetics"],
+    "stock": 20,
+    "image": [
+      "/assets/img/product/cosmetics/yaslanmagece.jpg",
+      "/assets/img/product/cosmetics/43.jpg",
+      "/assets/img/product/cosmetics/33.jpg",
+      "/assets/img/product/cosmetics/39.jpg",
+      "/assets/img/product/cosmetics/44.jpg"
+    ],
+    "shortDescription": "Usage: Apply with a gentle massage to cleansed, toned, and serum-applied skin. Ingredients: 5-Peptide Complex, Sodium Hyaluronate, Sodium Ascorbyl Phosphate (Vitamin C), Retinyl Acetate",
+    "fullDescription": "Usage: Apply with a gentle massage to cleansed, toned, and serum-applied skin. Ingredients: 5-Peptide Complex, Sodium Hyaluronate, Sodium Ascorbyl Phosphate (Vitamin C), Retinyl Acetate"
+  },
+  {
+    "id": "68",
+    "sku": "asdf190",
+    "name": "Hiyam Anti-Aging Eye Contour Care Cream",
+    "price": 3.1,
+    "discount": 10,
+    "new": true,
+    "rating": 4,
+    "saleCount": 29,
+    "category": ["cosmetics"],
+    "tag": ["cosmetics"],
+    "stock": 20,
+    "image": [
+      "/assets/img/product/cosmetics/yaslanmagoz.jpg",
+      "/assets/img/product/cosmetics/3.jpg",
+      "/assets/img/product/cosmetics/2.jpg",
+      "/assets/img/product/cosmetics/4.jpg",
+      "/assets/img/product/cosmetics/yaslanmagoz.jpg"
+    ],
+    "shortDescription": "Helps reduce the appearance of fine lines, dark circles, and under-eye bags.",
+    "fullDescription": "Helps reduce the appearance of fine lines, dark circles, and under-eye bags.Usage: Gently massage the cream into the under-eye area and surrounding skin in circular motions. Night use is recommended."
+  },
+  {
+    "id": "69",
+    "sku": "asdf191",
+    "name": "Hiyam Deodorant Roll-on",
+    "price": 12.43,
+    "discount": 20,
+    "new": false,
+    "rating": 5,
+    "saleCount": 19,
+    "category": ["cosmetics"],
+    "tag": ["cosmetics"],
+    "stock": 30,
+    "image": [
+      "/assets/img/product/cosmetics/deodrant.jpg",
+      "/assets/img/product/cosmetics/8.jpg",
+      "/assets/img/product/cosmetics/11.jpg",
+      "/assets/img/product/cosmetics/12.jpg",
+      "/assets/img/product/cosmetics/10.jpg"
+    ],
+    "shortDescription": "Prevents odor without stopping sweating. Provides a feeling of cleanliness and freshness throughout the day with its pleasant fragrance. Helps to reduce underarm skin tone unevenness and provides a firmer appearance with green tea extract (Camellia Sinensis Leaf Extract), olive leaf extract (Olea Europaea Leaf Extract), witch hazel extract (Hamamelis Virginiana Extract), and Vitamin B5 (Panthenol).",
+    "fullDescription": "Prevents odor without stopping sweating. Provides a feeling of cleanliness and freshness throughout the day with its pleasant fragrance. Helps to reduce underarm skin tone unevenness and provides a firmer appearance with green tea extract (Camellia Sinensis Leaf Extract), olive leaf extract (Olea Europaea Leaf Extract), witch hazel extract (Hamamelis Virginiana Extract), and Vitamin B5 (Panthenol). Usage: Apply to clean, dry underarms. Reapply as needed.Warnings: Do not apply to irritated skin. Avoid contact with eyes. Perform a patch test before first use. Store in a cool, dry place out of reach of children."
+  },
+  {
+    "id": "70",
+    "sku": "asdf192",
+    "name": "Hiyam Nourishing Anti-Aging Oil-Based Serum",
+    "price": 12.5,
+    "discount": 0,
+    "new": true,
+    "rating": 5,
+    "saleCount": 30,
+    "category": ["cosmetics"],
+    "tag": ["cosmetics"],
+    "stock": 10,
+    "image": [
+      "/assets/img/product/cosmetics/besleyici.jpg",
+      "/assets/img/product/cosmetics/40.jpg",
+      "/assets/img/product/cosmetics/38.jpg",
+      "/assets/img/product/cosmetics/32.jpg",
+      "/assets/img/product/cosmetics/16.jpg"
+    ],
+    "shortDescription": "Enriched with CoQ10 (ubiquinone), Vitamin C (ascorbyl tetraisopalmitate), Vitamin E (tocopheryl acetate), Vitamin A (retinyl acetate), and plant extracts like Gotu Kola (Centella Asiatica) and Butcher's Broom (Ruscus Aculeatus), this serum helps combat five signs of aging: wrinkles, firmness, elasticity, skin radiance, and volume loss.",
+    "fullDescription": "Enriched with CoQ10 (ubiquinone), Vitamin C (ascorbyl tetraisopalmitate), Vitamin E (tocopheryl acetate), Vitamin A (retinyl acetate), and plant extracts like Gotu Kola (Centella Asiatica) and Butcher's Broom (Ruscus Aculeatus), this serum helps combat five signs of aging: wrinkles, firmness, elasticity, skin radiance, and volume loss.Usage: Apply to cleansed and toned skin using circular motions, gently massaging it in. Warnings:Store in a cool, dry place out of reach of children.Perform a patch test before first use.Avoid contact with eyes."
+  },
+  {
+    "id": "71",
+    "sku": "asdf193",
+    "name": "Hiyam Sunscreen - Anti-Aging Effective",
+    "price": 19.33,
+    "discount": 20,
+    "new": false,
+    "rating": 5,
+    "saleCount": 20,
+    "category": ["cosmetics"],
+    "tag": ["cosmetics"],
+    "stock": 30,
+    "image": [
+      "/assets/img/product/cosmetics/guneskrem.jpg",
+      "/assets/img/product/cosmetics/guneskrem1.jpg",
+      "/assets/img/product/cosmetics/18.jpg",
+      "/assets/img/product/cosmetics/9.jpg",
+      "/assets/img/product/cosmetics/guneskrem.jpg"
+    ],
+    "shortDescription": "This sunscreen provides high-level sun protection with mineral filters and valuable oils. Enriched with Squalane, Vitamin E, Niacinamide, Vitamin B5, Hyaluronic Acid, and other premium plant extracts such as Ahudu and Avocado, it helps reduce the appearance of fine lines and wrinkles while protecting your skin from UV damage. Its water-based formula offers lightweight protection and helps brighten the skin without a heavy feeling.",
+    "fullDescription": "This sunscreen provides high-level sun protection with mineral filters and valuable oils. Enriched with Squalane, Vitamin E, Niacinamide, Vitamin B5, Hyaluronic Acid, and other premium plant extracts such as Ahudu and Avocado, it helps reduce the appearance of fine lines and wrinkles while protecting your skin from UV damage. Its water-based formula offers lightweight protection and helps brighten the skin without a heavy feeling.Usage: Apply generously to the face and exposed skin at least 15 minutes before sun exposure. Reapply every 2 hours, or more frequently if swimming or sweating. Warnings:Store in a cool, dry place out of reach of children. For external use only. Avoid direct contact with eyes. If irritation occurs, discontinue use and consult a doctor."
+  }
+]

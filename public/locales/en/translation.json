@@ -1,0 +1,22 @@
+{
+    "home": "Home",
+   
+    "home_cosmetics": "Home Cosmetics",
+    
+    "shop": "Shop",
+    
+    "product_details": "Product Details",
+   
+    "collection": "Collection",
+    "pages": "Pages",
+    "cart": "Cart",
+    "checkout": "Checkout",
+    "wishlist": "Wishlist",
+    "compare": "Compare",
+    "my_account": "My Account",
+    "login_register": "Login / Register",
+    "about_us": "About Us",
+    "contact_us": "Contact Us",
+    "404_page": "404 Page"
+   
+}  
