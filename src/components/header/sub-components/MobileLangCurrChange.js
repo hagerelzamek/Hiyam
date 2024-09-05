@@ -45,8 +45,9 @@ const MobileLangCurrChange = () => {
           value={currency.currencyName}
           onChange={setCurrencyTrigger}
         >
+            <option value="TL">TL</option>
           <option value="USD">USD</option>
-          <option value="EUR">EUR</option>
+        
           <option value="GBP">GBP</option>
         </select>
       </div>

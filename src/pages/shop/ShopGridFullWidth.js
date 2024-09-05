@@ -9,6 +9,7 @@ import Breadcrumb from '../../wrappers/breadcrumb/Breadcrumb';
 import ShopSidebar from '../../wrappers/product/ShopSidebar';
 import ShopTopbar from '../../wrappers/product/ShopTopbar';
 import ShopProducts from '../../wrappers/product/ShopProducts';
+import LayoutThree from '../../layouts/LayoutThree';
 
 const ShopGridFullWidth = ({location}) => {
     const [layout, setLayout] = useState('grid three-column');
@@ -54,7 +55,7 @@ const ShopGridFullWidth = ({location}) => {
                 description="Shop page of flone react minimalist eCommerce template."
             />
 
-            <LayoutOne headerTop="visible">
+            <LayoutThree headerTop="visible">
                 {/* breadcrumb */}
                 <Breadcrumb 
                     pages={[
@@ -95,7 +96,7 @@ const ShopGridFullWidth = ({location}) => {
                         </div>
                     </div>
                 </div>
-            </LayoutOne>
+            </LayoutThree>
         </Fragment>
     )
 }

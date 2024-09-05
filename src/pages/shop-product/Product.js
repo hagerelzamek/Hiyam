@@ -42,6 +42,14 @@ const Product = () => {
         <ProductDescriptionTab
           spaceBottomClass="pb-90"
           productFullDesc={product.fullDescription}
+          productWeight={product.Weight}
+          productType={product.Type}
+          skinType={product.skin}
+         Materials={product.material}
+         userName1={product.user1}
+         userName2={product.user2}
+         reviewComment1={product.comment1}
+         reviewComment2={product.comment2}
         />
 
         {/* related product slider */}

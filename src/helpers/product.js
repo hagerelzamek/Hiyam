@@ -1,29 +1,27 @@
-// get products
 export const getProducts = (products, category, type, limit) => {
-  const finalProducts = category
-    ? products.filter(
-        product => product.category.filter(single => single === category)[0]
-      )
-    : products;
+  let filteredProducts = products;
 
-  if (type && type === "new") {
-    const newProducts = finalProducts.filter(single => single.new);
-    return newProducts.slice(0, limit ? limit : newProducts.length);
-  }
-  if (type && type === "bestSeller") {
-    return finalProducts
-      .sort((a, b) => {
-        return b.saleCount - a.saleCount;
-      })
-      .slice(0, limit ? limit : finalProducts.length);
-  }
-  if (type && type === "saleItems") {
-    const saleItems = finalProducts.filter(
-      single => single.discount && single.discount > 0
+  if (category) {
+    filteredProducts = filteredProducts.filter((product) =>
+      product.category.includes(category)
     );
-    return saleItems.slice(0, limit ? limit : saleItems.length);
   }
-  return finalProducts.slice(0, limit ? limit : finalProducts.length);
+
+  // Filter based on type
+  if (type === "new") {
+    filteredProducts = filteredProducts.filter((product) => product.new === true);
+  } else if (type === "bestSeller") {
+    filteredProducts = filteredProducts.filter((product) => product.stock < 2);
+  } else if (type === "saleItems") {
+    filteredProducts = filteredProducts.filter((product) => product.discount > 0);
+  }
+
+  // Limit the number of products returned
+  if (limit) {
+    filteredProducts = filteredProducts.slice(0, limit);
+  }
+
+  return filteredProducts;
 };
 
 // get product discount price

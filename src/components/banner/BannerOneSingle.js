@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const BannerOneSingle = ({ data, spaceBottomClass }) => {
   return (
-      <div className={clsx("single-banner", spaceBottomClass)}>
+      <div style={{width:'100%',justifyContent:'center',alignItems:'center',margin:'auto 10rem',textAlign:'center'}} className={clsx("single-banner", spaceBottomClass)}>
         <Link to={process.env.PUBLIC_URL + data.link}>
           <img src={process.env.PUBLIC_URL + data.image} alt="" />
         </Link>

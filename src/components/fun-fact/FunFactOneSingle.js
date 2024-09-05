@@ -13,7 +13,7 @@ const FunFactOneSingle = ({ data, spaceBottomClass, textAlignClass }) => {
     }
   };
   return (
-      <div className={clsx("single-count", textAlignClass, spaceBottomClass)}>
+      <div style={{width:'100%',justifyContent:'center',alignItems:'center',margin:'2rem 7rem',textAlign:'center'}} className={clsx("single-count", textAlignClass, spaceBottomClass)}>
         <div className="count-icon">
           <i className={data.iconClass} />
         </div>

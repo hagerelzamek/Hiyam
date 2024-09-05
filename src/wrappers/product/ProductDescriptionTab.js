@@ -27,16 +27,17 @@ const ProductDescriptionTab = ({ spaceBottomClass, productFullDesc,Materials,ski
                 <div className="product-anotherinfo-wrapper">
                   <ul>
                     <li>
-                      <span>Weight</span> {productWeight}
+                      <span>Weight:  {productWeight} </span>
+                    
                     </li>
                     <li>
-                      <span>Type</span>{productType}
+                      <span>Type: {productType}</span>
                     </li>
                     <li>
-                      <span>Skin Type</span> {skinType}
+                      <span>Skin Type: {skinType}</span> 
                     </li>
                     <li>
-                      <span>Materials</span> {Materials}
+                      <span>Materials: {Materials}</span> 
                     </li>
                   </ul>
                 </div>

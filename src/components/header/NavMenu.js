@@ -17,13 +17,13 @@ const NavMenu = ({ menuWhiteClass, sidebarMenu }) => {
           <li>
             <Link to={process.env.PUBLIC_URL + "/"}>
               {t("home")}
-             {/*  {sidebarMenu ? (
+              {/*  {sidebarMenu ? (
                 <span>
                   <i className="fa fa-angle-right"></i>
                 </span>
               ) : (
                 <i className="fa fa-angle-down" />
-              )} */}
+              )}  */}
             </Link> 
            {/*  <ul className="mega-menu mega-menu-padding">
               <li>
@@ -462,13 +462,13 @@ const NavMenu = ({ menuWhiteClass, sidebarMenu }) => {
           <li>
             <Link to={process.env.PUBLIC_URL + "/blog-standard"}>
               {t("blog")}
-              {sidebarMenu ? (
+             {/*  {sidebarMenu ? (
                 <span>
                   <i className="fa fa-angle-right"></i>
                 </span>
               ) : (
                 <i className="fa fa-angle-down" />
-              )}
+              )} */}
             </Link>
           {/*   <ul className="submenu">
               <li>

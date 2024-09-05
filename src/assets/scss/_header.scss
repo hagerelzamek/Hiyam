@@ -31,7 +31,10 @@
   border-bottom: 0 solid #4a90e2;
   background-color: #fff;
   box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.06);
-
+  .logo {
+  
+    margin-top: 0px;
+  }
   .center-menu-logo {
     display: none;
     @media #{$md-layout} {
@@ -56,6 +59,7 @@
         > button,
         & > a {
           color: #000;
+        
           span {
             &.count-style {
               color: #fff;
@@ -91,6 +95,7 @@
   }
 }
 .logo {
+  
   margin-top: 3px;
   @media #{$md-layout} {
     margin-top: 0;
@@ -100,7 +105,7 @@
   }
   
   &.logo-hm5 {
-    margin-top: 41px;
+    margin-top: 0px;
     a.sticky-block {
       display: none;
       @media #{$md-layout,
@@ -144,7 +149,7 @@
     ul {
       display: block;
 
-      margin-top: -5px;
+      margin-top: 3px;
 
       text-align: center;
       li {
@@ -157,7 +162,7 @@
           position: absolute;
           z-index: 999;
           top: 100%;
-          left: 0;
+          left: 30;
 
           display: block;
           visibility: hidden;

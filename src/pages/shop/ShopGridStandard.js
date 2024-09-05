@@ -1,7 +1,7 @@
 import { Fragment, useState, useEffect } from 'react';
 import Paginator from 'react-hooks-paginator';
 import { useSelector } from "react-redux";
-import { useLocation } from "react-router-dom"
+import { useLocation } from "react-router-dom";
 import { getSortedProducts } from '../../helpers/product';
 import SEO from "../../components/seo";
 import LayoutOne from '../../layouts/LayoutOne';
@@ -9,15 +9,6 @@ import Breadcrumb from '../../wrappers/breadcrumb/Breadcrumb';
 import ShopSidebar from '../../wrappers/product/ShopSidebar';
 import ShopTopbar from '../../wrappers/product/ShopTopbar';
 import ShopProducts from '../../wrappers/product/ShopProducts';
-import LayoutTwo from '../../layouts/LayoutTwo';
-import LayoutThree from '../../layouts/LayoutThree';
-import LayoutFour from '../../layouts/LayoutFour';
-import LayoutFive from '../../layouts/LayoutFive';
-import LayoutSix from '../../layouts/LayoutSix';
-import LayoutSeven from '../../layouts/LayoutSeven';
-import LayoutEight from '../../layouts/LayoutEight';
-import LayoutNine from '../../layouts/LayoutNine';
-import LayoutTen from '../../layouts/LayoutTen';
 
 const ShopGridStandard = () => {
     const [layout, setLayout] = useState('grid three-column');
@@ -28,14 +19,16 @@ const ShopGridStandard = () => {
     const [offset, setOffset] = useState(0);
     const [currentPage, setCurrentPage] = useState(1);
     const [currentData, setCurrentData] = useState([]);
-    const [sortedProducts, setSortedProducts] = useState([]);
+    const [filteredProducts, setFilteredProducts] = useState([]);
     const { products } = useSelector((state) => state.product);
 
     const pageLimit = 15;
-    let { pathname } = useLocation();
+    const location = useLocation();
+    const queryParams = new URLSearchParams(location.search);
+    const category = queryParams.get("category");
 
     const getLayout = (layout) => {
-        setLayout(layout)
+        setLayout(layout);
     }
 
     const getSortParams = (sortType, sortValue) => {
@@ -49,12 +42,23 @@ const ShopGridStandard = () => {
     }
 
     useEffect(() => {
-        let sortedProducts = getSortedProducts(products, sortType, sortValue);
+        let filteredProducts = products;
+
+        // Check if category is a string, not an array
+        if (category) {
+            filteredProducts = products.filter(
+                (product) => product.category === category
+            );
+        }
+
+        // Sort the products
+        let sortedProducts = getSortedProducts(filteredProducts, sortType, sortValue);
         const filterSortedProducts = getSortedProducts(sortedProducts, filterSortType, filterSortValue);
         sortedProducts = filterSortedProducts;
-        setSortedProducts(sortedProducts);
+        
+        setFilteredProducts(sortedProducts);
         setCurrentData(sortedProducts.slice(offset, offset + pageLimit));
-    }, [offset, products, sortType, sortValue, filterSortType, filterSortValue ]);
+    }, [offset, products, sortType, sortValue, filterSortType, filterSortValue, category]);
 
     return (
         <Fragment>
@@ -68,7 +72,7 @@ const ShopGridStandard = () => {
                 <Breadcrumb 
                     pages={[
                         {label: "Home", path: process.env.PUBLIC_URL + "/" },
-                        {label: "Shop", path: process.env.PUBLIC_URL + pathname }
+                        {label: "Shop", path: process.env.PUBLIC_URL + location.pathname }
                     ]} 
                 />
 
@@ -77,11 +81,16 @@ const ShopGridStandard = () => {
                         <div className="row">
                             <div className="col-lg-3 order-2 order-lg-1">
                                 {/* shop sidebar */}
-                                {/* <ShopSidebar products={products} getSortParams={getSortParams} sideSpaceClass="mr-30"/> */}
+                                <ShopSidebar products={products} getSortParams={getSortParams} sideSpaceClass="mr-30"/> 
                             </div>
                             <div className="col-lg-9 order-1 order-lg-2">
                                 {/* shop topbar default */}
-                                <ShopTopbar getLayout={getLayout} getFilterSortParams={getFilterSortParams} productCount={products.length} sortedProductCount={currentData.length} />
+                                <ShopTopbar 
+                                    getLayout={getLayout} 
+                                    getFilterSortParams={getFilterSortParams} 
+                                    productCount={filteredProducts.length} 
+                                    sortedProductCount={currentData.length} 
+                                />
 
                                 {/* shop page content default */}
                                 <ShopProducts layout={layout} products={currentData} />
@@ -89,7 +98,7 @@ const ShopGridStandard = () => {
                                 {/* shop product pagination */}
                                 <div className="pro-pagination-style text-center mt-30">
                                     <Paginator
-                                        totalRecords={sortedProducts.length}
+                                        totalRecords={filteredProducts.length}
                                         pageLimit={pageLimit}
                                         pageNeighbours={2}
                                         setOffset={setOffset}
@@ -106,8 +115,7 @@ const ShopGridStandard = () => {
                 </div>
             </LayoutOne>
         </Fragment>
-    )
+    );
 }
-
 
 export default ShopGridStandard;

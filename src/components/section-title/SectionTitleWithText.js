@@ -7,12 +7,10 @@ const SectionTitleWithText = ({ spaceTopClass, spaceBottomClass }) => {
       <div className="container">
         <div className="welcome-content text-center">
           <h5>Who Are We</h5>
-          <h1>Welcome To Flone</h1>
+          <h1>Welcome To Hiyam Cosmetics</h1>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-            eiusmod tempor incididunt labor et dolore magna aliqua. Ut enim ad
-            minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commo consequat irure{" "}
+          At Hiyam Cosmetics, we are passionate innovators dedicated to enhancing your natural beauty through premium skincare and beauty solutions. Our team of experts blends cutting-edge technology with high-quality ingredients to create products that deliver real, visible results. With a commitment to sustainability, ethical practices, and exceptional customer care, we strive to empower individuals worldwide to embrace their unique beauty with confidence. Join us on a journey of self-care and transformation as we redefine beauty standards and elevate your everyday routine.
+            {" "}
           </p>
         </div>
       </div>

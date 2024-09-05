@@ -1,34 +1,34 @@
 [
   {
     "id": 1,
-    "image": "/assets/img/banner/pr1.png",
+    "image": "/assets/img/banner/serums2.png",
     "title": "Serums",
     "subtitle": "Starting at",
-    "price": "$9.00",
+    "price": "₺899",
     "link": "/shop-grid-standard"
   },
   {
     "id": 2,
-    "image": "/assets/img/banner/pr4.png",
+    "image": "/assets/img/banner/tonics2.png",
     "title": "Tonics",
     "subtitle": "Starting at",
-    "price": "$7.00",
+    "price": "₺499",
     "link": "/shop-grid-standard"
   },
   {
     "id": 2,
-    "image": "/assets/img/banner/pr2.png",
-    "title": "Face Creams",
+    "image": "/assets/img/banner/crems.png",
+    "title": "Creams",
     "subtitle": "Starting at",
-    "price": "$7.00",
+    "price": "₺699",
     "link": "/shop-grid-standard"
   },
   {
     "id": 2,
-    "image": "/assets/img/banner/pr4.png",
+    "image": "/assets/img/banner/cleansers2.png",
     "title": "Cleansers",
     "subtitle": "Starting at",
-    "price": "$7.00",
+    "price": "₺399",
     "link": "/shop-grid-standard"
   }
   

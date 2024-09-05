@@ -9,6 +9,10 @@ import FeatureIconThree from "../../wrappers/feature-icon/FeatureIconThree";
 import BannerNine from "../../wrappers/banner/BannerNine";
 import TabProductFive from "../../wrappers/product/TabProductFive";
 import BannerTwentySeven from "../../wrappers/banner/BannerTwentySeven";
+import LayoutThree from "../../layouts/LayoutThree";
+import HeaderTop from "../../components/header/HeaderTop";
+import TabProductFour from "../../wrappers/product/TabProductFour";
+import TabProductTwentyOne from "../../wrappers/product/TabProductTwentyOne";
 const HomeCosmetics = () => {
   return (
     <Fragment>
@@ -16,7 +20,8 @@ const HomeCosmetics = () => {
         titleTemplate="Cosmetics Home"
         description="Cosmetics home of flone react minimalist eCommerce template."
       />
-      <LayoutOne
+     
+      <LayoutOne headerTop="visible"
         headerContainerClass="container-fluid"
         headerPaddingClass="header-padding-2"
       >

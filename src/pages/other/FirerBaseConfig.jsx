@@ -1,11 +1,9 @@
-// Import the functions you need from the SDKs you need
+// src/FirerBaseConfig.js
 import { initializeApp } from "firebase/app";
+import { getAuth } from "firebase/auth";
 import { getAnalytics } from "firebase/analytics";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
   apiKey: "AIzaSyA_sSCP7v7fWLRMvEi4cwWPw6t81RtvBaU",
   authDomain: "hiyam-cosmetics.firebaseapp.com",
@@ -18,4 +16,7 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+const auth = getAuth(app); // Initialize Firebase Auth
+const analytics = getAnalytics(app); // Initialize Firebase Analytics (optional)
+
+export { auth }; // Export the auth instance

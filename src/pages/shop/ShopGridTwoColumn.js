@@ -72,11 +72,11 @@ const ShopGridTwoColumn = () => {
             <div className="row">
               <div className="col-lg-3">
                 {/* shop sidebar */}
-               {/*  <ShopSidebar
+                 <ShopSidebar
                   products={products}
                   getSortParams={getSortParams}
                   sideSpaceClass="mr-30"
-                /> */}
+                /> 
               </div>
               <div className="col-lg-9">
                 {/* shop topbar default */}
