@@ -11,18 +11,18 @@ const settings = {
   grabCursor: true,
   breakpoints: {
     320: {
-      slidesPerView: 1
+      slidesPerView: 1,
     },
     576: {
-      slidesPerView: 2
+      slidesPerView: 2,
     },
     768: {
-      slidesPerView: 3
+      slidesPerView: 3,
     },
     1024: {
-      slidesPerView: 4
-    }
-  }
+      slidesPerView: 4,
+    },
+  },
 };
 
 const ProductGridNine = ({
@@ -30,7 +30,7 @@ const ProductGridNine = ({
   colorClass,
   category,
   type,
-  limit
+  limit,
 }) => {
   const { products } = useSelector((state) => state.product);
   const currency = useSelector((state) => state.currency);
@@ -39,7 +39,7 @@ const ProductGridNine = ({
   const { compareItems } = useSelector((state) => state.compare);
   const prods = getProducts(products, category, type, limit);
 
-  if(!prods?.length) return <p>No products found</p>;
+  if (!prods?.length) return <p>No products found</p>;
 
   return (
     <Swiper options={settings}>
@@ -51,19 +51,15 @@ const ProductGridNine = ({
               colorClass={colorClass}
               product={product}
               currency={currency}
-              cartItem={
-                cartItems.find((cartItem) => cartItem.id === product.id)
-              }
-              wishlistItem={
-                wishlistItems.find(
-                  (wishlistItem) => wishlistItem.id === product.id
-                )
-              }
-              compareItem={
-                compareItems.find(
-                  (compareItem) => compareItem.id === product.id
-                )
-              }
+              cartItem={cartItems.find(
+                (cartItem) => cartItem.id === product.id
+              )}
+              wishlistItem={wishlistItems.find(
+                (wishlistItem) => wishlistItem.id === product.id
+              )}
+              compareItem={compareItems.find(
+                (compareItem) => compareItem.id === product.id
+              )}
             />
           </SwiperSlide>
         );
@@ -77,7 +73,7 @@ ProductGridNine.propTypes = {
   colorClass: PropTypes.string,
   category: PropTypes.string,
   type: PropTypes.string,
-  limit: PropTypes.number
+  limit: PropTypes.number,
 };
 
 export default ProductGridNine;

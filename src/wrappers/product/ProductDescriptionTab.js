@@ -1,9 +1,76 @@
+import { useState } from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 import Tab from "react-bootstrap/Tab";
 import Nav from "react-bootstrap/Nav";
+import { API_BASE_URL } from "../../utils";
+import { toast } from "react-toastify";
+import { useAuth } from "../../context/Auth";
+import Avatar from "../../avatart.png";
 
-const ProductDescriptionTab = ({ spaceBottomClass, productFullDesc,Materials,skinType,productType,productWeight,userName1,reviewComment1,userName2,reviewComment2 }) => {
+const ProductDescriptionTab = ({
+  spaceBottomClass,
+  productFullDesc,
+  Materials,
+  skinType,
+  productType,
+  productWeight,
+  productId,
+  reviews: initialReviews,
+}) => {
+  const [reviews, setReviews] = useState(initialReviews || []);
+  const [newReview, setNewReview] = useState({
+    rating: 0,
+    comment: "",
+  });
+  const [loading, setLoading] = useState(false);
+
+  const { authenticated, token } = useAuth();
+
+  const handleRating = (rating) => {
+    setNewReview({ ...newReview, rating });
+  };
+
+  const createReview = async (e) => {
+    e.preventDefault();
+    if (!authenticated) {
+      localStorage.setItem("redirectUrl", window.location.href);
+      window.location.href = "/login-register";
+      toast.info("Please login first to write a review.");
+      return;
+    }
+    if (!newReview.rating || !newReview.comment) {
+      toast.error("Please provide rating and comment.");
+    }
+    try {
+      setLoading(true);
+      const response = await fetch(API_BASE_URL + "/review", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: token,
+        },
+        body: JSON.stringify({
+          rate: newReview.rating,
+          comment: newReview.comment,
+          productId,
+        }),
+      });
+      const data = await response.json();
+      if (!response.ok) {
+        throw new Error(data.message);
+      }
+      toast.success("Thank you for your review.");
+      setReviews([...reviews, data]);
+      setNewReview({ name: "", rating: 0, comment: "" });
+    } catch (error) {
+      console.log(error);
+      toast.error(error.message || "Failed to create review.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <div className={clsx("description-review-area", spaceBottomClass)}>
       <div className="container">
@@ -19,7 +86,9 @@ const ProductDescriptionTab = ({ spaceBottomClass, productFullDesc,Materials,ski
                 <Nav.Link eventKey="productDescription">Description</Nav.Link>
               </Nav.Item>
               <Nav.Item>
-                <Nav.Link eventKey="productReviews">Reviews(2)</Nav.Link>
+                <Nav.Link eventKey="productReviews">
+                  Reviews({reviews.length})
+                </Nav.Link>
               </Nav.Item>
             </Nav>
             <Tab.Content className="description-review-bottom">
@@ -27,17 +96,16 @@ const ProductDescriptionTab = ({ spaceBottomClass, productFullDesc,Materials,ski
                 <div className="product-anotherinfo-wrapper">
                   <ul>
                     <li>
-                      <span>Weight:  {productWeight} </span>
-                    
+                      <span>Weight: {productWeight}</span>
                     </li>
                     <li>
                       <span>Type: {productType}</span>
                     </li>
                     <li>
-                      <span>Skin Type: {skinType}</span> 
+                      <span>Skin Type: {skinType}</span>
                     </li>
                     <li>
-                      <span>Materials: {Materials}</span> 
+                      <span>Materials: {Materials}</span>
                     </li>
                   </ul>
                 </div>
@@ -49,112 +117,93 @@ const ProductDescriptionTab = ({ spaceBottomClass, productFullDesc,Materials,ski
                 <div className="row">
                   <div className="col-lg-7">
                     <div className="review-wrapper">
-                      <div className="single-review">
-                        <div className="review-img">
-                          <img
-                            src={
-                              process.env.PUBLIC_URL +
-                              "/assets/img/testimonial/1.jpg"
-                            }
-                            alt=""
-                          />
-                        </div>
-                        <div className="review-content">
-                          <div className="review-top-wrap">
-                            <div className="review-left">
-                              <div className="review-name">
-                                <h4>{userName1}</h4>
-                              </div>
-                              <div className="review-rating">
-                                <i className="fa fa-star" />
-                                <i className="fa fa-star" />
-                                <i className="fa fa-star" />
-                                <i className="fa fa-star" />
-                                <i className="fa fa-star" />
-                              </div>
-                            </div>
-                            <div className="review-left">
-                              <button>Reply</button>
-                            </div>
+                      {reviews.map((review, index) => (
+                        <div
+                          key={index}
+                          className="single-review d-flex align-items-center"
+                        >
+                          <div className="review-img">
+                            <img src={Avatar} alt="" width={60} height={60} />
                           </div>
-                          <div className="review-bottom">
-                            <p>
-                             {reviewComment1}
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="single-review child-review">
-                        <div className="review-img">
-                          <img
-                            src={
-                              process.env.PUBLIC_URL +
-                              "/assets/img/testimonial/2.jpg"
-                            }
-                            alt=""
-                          />
-                        </div>
-                        <div className="review-content">
-                          <div className="review-top-wrap">
-                            <div className="review-left">
-                              <div className="review-name">
-                                <h4>{userName2}</h4>
-                              </div>
-                              <div className="review-rating">
-                                <i className="fa fa-star" />
-                                <i className="fa fa-star" />
-                                <i className="fa fa-star" />
-                                <i className="fa fa-star" />
-                                <i className="fa fa-star" />
+                          <div className="review-content">
+                            <div className="review-top-wrap">
+                              <div className="review-left">
+                                <div className="review-name">
+                                  <h4>
+                                    {review?.user?.firstName +
+                                      " " +
+                                      review?.user?.lastName}
+                                  </h4>
+                                </div>
+                                <div className="review-rating">
+                                  {[...Array(5)].map((star, i) => (
+                                    <i
+                                      key={i}
+                                      className={
+                                        i < review.rating
+                                          ? "fa fa-star"
+                                          : "fa fa-star-o"
+                                      }
+                                    />
+                                  ))}
+                                </div>
                               </div>
                             </div>
-                            <div className="review-left">
-                              <button>Reply</button>
+                            <div className="review-bottom">
+                              <p>{review.message}</p>
                             </div>
                           </div>
-                          <div className="review-bottom">
-                            <p>
-                              {reviewComment2}
-                            </p>
-                          </div>
                         </div>
-                      </div>
+                      ))}
                     </div>
                   </div>
                   <div className="col-lg-5">
                     <div className="ratting-form-wrapper pl-50">
                       <h3>Add a Review</h3>
-                      <div className="ratting-form">
-                        <form action="#">
+                      <div className="ratting-form mt-4">
+                        <form onSubmit={createReview}>
                           <div className="star-box">
-                            <span>Your rating:</span>
+                            <h4 className="mr-15">Your rating:</h4>
                             <div className="ratting-star">
-                              <i className="fa fa-star" />
-                              <i className="fa fa-star" />
-                              <i className="fa fa-star" />
-                              <i className="fa fa-star" />
-                              <i className="fa fa-star" />
+                              {[...Array(5)].map((star, i) => (
+                                <i
+                                  key={i}
+                                  className={
+                                    i < newReview.rating
+                                      ? "fa fa-star"
+                                      : "fa fa-star-o"
+                                  }
+                                  onClick={() => handleRating(i + 1)}
+                                  style={{
+                                    cursor: "pointer",
+                                    fontSize: "24px",
+                                    pointerEvents: loading ? "none" : "auto",
+                                  }}
+                                />
+                              ))}
                             </div>
                           </div>
                           <div className="row">
-                            <div className="col-md-6">
-                              <div className="rating-form-style mb-10">
-                                <input placeholder="Name" type="text" />
-                              </div>
-                            </div>
-                            <div className="col-md-6">
-                              <div className="rating-form-style mb-10">
-                                <input placeholder="Email" type="email" />
-                              </div>
-                            </div>
                             <div className="col-md-12">
                               <div className="rating-form-style form-submit">
                                 <textarea
                                   name="Your Review"
-                                  placeholder="Message"
-                                  defaultValue={""}
+                                  placeholder="Message | Comment | Review"
+                                  value={newReview.comment}
+                                  onChange={(e) =>
+                                    setNewReview({
+                                      ...newReview,
+                                      comment: e.target.value,
+                                    })
+                                  }
+                                  required
+                                  disabled={loading}
                                 />
-                                <input type="submit" defaultValue="Submit" />
+                                <input
+                                  disabled={loading}
+                                  type="submit"
+                                  value={loading ? "Submitting..." : "Submit"}
+                                />
                               </div>
                             </div>
                           </div>
@@ -179,10 +228,7 @@ ProductDescriptionTab.propTypes = {
   skinType: PropTypes.string,
   productType: PropTypes.string,
   productWeight: PropTypes.string,
-  userName1: PropTypes.string,
-  reviewComment1: PropTypes.string,
-  userName2: PropTypes.string,
-  reviewComment2: PropTypes.string,
+  initialReviews: PropTypes.array,
 };
 
 export default ProductDescriptionTab;

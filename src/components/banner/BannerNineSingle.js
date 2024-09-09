@@ -6,14 +6,16 @@ const BannerNineSingle = ({ data, spaceBottomClass }) => {
   return (
     <div className={clsx("single-banner-2", spaceBottomClass)}>
       <Link to={`${process.env.PUBLIC_URL + data.link}?category=${data.title}`}>
-        <img src={process.env.PUBLIC_URL + data.image} alt={data.title} />
+        <img src={data.image?.url} alt={data.title} />
       </Link>
       <div className="banner-content-2">
         <h3>{data.title}</h3>
         <h4>
           {data.subtitle} <span>{data.price}</span>
         </h4>
-        <Link to={`${process.env.PUBLIC_URL + data.link}?category=${data.title}`}>
+        <Link
+          to={`${process.env.PUBLIC_URL + data.link}?category=${data.title}`}
+        >
           <i className="fa fa-long-arrow-right" />
         </Link>
       </div>

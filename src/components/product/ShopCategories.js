@@ -1,7 +1,19 @@
 import PropTypes from "prop-types";
 import { setActiveSort } from "../../helpers/product";
+import { useEffect, useState } from "react";
+import { API_BASE_URL } from "../../utils";
 
-const ShopCategories = ({ categories, getSortParams }) => {
+const ShopCategories = ({ getSortParams }) => {
+  const [categories, setCategories] = useState([]);
+
+  useEffect(() => {
+    const fetchCategories = async () => {
+      const response = await fetch(API_BASE_URL + "/category");
+      const data = await response.json();
+      setCategories(data);
+    };
+    fetchCategories();
+  }, []);
   const handleCategoryClick = (e, category) => {
     e.preventDefault();
     getSortParams("category", category);
@@ -16,9 +28,7 @@ const ShopCategories = ({ categories, getSortParams }) => {
           <ul>
             <li>
               <div className="sidebar-widget-list-left">
-                <button
-                  onClick={(e) => handleCategoryClick(e, "")}
-                >
+                <button onClick={(e) => handleCategoryClick(e, "")}>
                   <span className="checkmark" /> All Categories
                 </button>
               </div>
@@ -27,9 +37,9 @@ const ShopCategories = ({ categories, getSortParams }) => {
               <li key={key}>
                 <div className="sidebar-widget-list-left">
                   <button
-                    onClick={(e) => handleCategoryClick(e, category)}
+                    onClick={(e) => handleCategoryClick(e, category?.title)}
                   >
-                    <span className="checkmark" /> {category}
+                    <span className="checkmark" /> {category?.title}
                   </button>
                 </div>
               </li>
@@ -45,7 +55,7 @@ const ShopCategories = ({ categories, getSortParams }) => {
 
 ShopCategories.propTypes = {
   categories: PropTypes.array,
-  getSortParams: PropTypes.func.isRequired
+  getSortParams: PropTypes.func.isRequired,
 };
 
 export default ShopCategories;

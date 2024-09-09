@@ -1,4 +1,4 @@
-import { Fragment } from "react"; 
+import { Fragment } from "react";
 import { useSelector } from "react-redux";
 import { useParams, useLocation } from "react-router-dom";
 import SEO from "../../components/seo";
@@ -12,8 +12,7 @@ const ProductFixedImage = () => {
   let { pathname } = useLocation();
   let { id } = useParams();
   const { products } = useSelector((state) => state.product);
-  const product = products.find(product => product.id === id);
-
+  const product = products.find((product) => product.id === id);
 
   return (
     <Fragment>
@@ -24,11 +23,11 @@ const ProductFixedImage = () => {
 
       <LayoutOne headerTop="visible">
         {/* breadcrumb */}
-        <Breadcrumb 
+        <Breadcrumb
           pages={[
-            {label: "Home", path: process.env.PUBLIC_URL + "/" },
-            {label: "Shop Product", path: process.env.PUBLIC_URL + pathname }
-          ]} 
+            { label: "Home", path: process.env.PUBLIC_URL + "/" },
+            { label: "Shop Product", path: process.env.PUBLIC_URL + pathname },
+          ]}
         />
 
         {/* product description with image */}
@@ -54,6 +53,5 @@ const ProductFixedImage = () => {
     </Fragment>
   );
 };
-
 
 export default ProductFixedImage;

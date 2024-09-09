@@ -11,28 +11,22 @@ const ProductGridFour = ({ spaceBottomClass, category, type, limit }) => {
   const { wishlistItems } = useSelector((state) => state.wishlist);
   const { compareItems } = useSelector((state) => state.compare);
   const prods = getProducts(products, category, type, limit);
-  
+
   return (
     <Fragment>
-      {prods?.map(product => (
+      {prods?.map((product) => (
         <div className="col-xl-3 col-md-6 col-lg-4 col-sm-6" key={product.id}>
           <ProductGridSingleFour
             spaceBottomClass={spaceBottomClass}
             product={product}
             currency={currency}
-            cartItem={
-              cartItems.find(cartItem => cartItem.id === product.id)
-            }
-            wishlistItem={
-              wishlistItems.find(
-                wishlistItem => wishlistItem.id === product.id
-              )
-            }
-            compareItem={
-              compareItems.find(
-                compareItem => compareItem.id === product.id
-              )
-            }
+            cartItem={cartItems.find((cartItem) => cartItem.id === product.id)}
+            wishlistItem={wishlistItems.find(
+              (wishlistItem) => wishlistItem.id === product.id
+            )}
+            compareItem={compareItems.find(
+              (compareItem) => compareItem.id === product.id
+            )}
           />
         </div>
       ))}
@@ -43,6 +37,5 @@ const ProductGridFour = ({ spaceBottomClass, category, type, limit }) => {
 ProductGridFour.propTypes = {
   spaceBottomClass: PropTypes.string,
 };
-
 
 export default ProductGridFour;

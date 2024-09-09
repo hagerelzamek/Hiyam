@@ -12,34 +12,34 @@ const settings = {
   spaceBetween: 30,
   breakpoints: {
     320: {
-      slidesPerView: 1
+      slidesPerView: 1,
     },
     576: {
-      slidesPerView: 2
+      slidesPerView: 2,
     },
     768: {
-      slidesPerView: 3
+      slidesPerView: 3,
     },
     1024: {
-      slidesPerView: 4
-    }
-  }
+      slidesPerView: 4,
+    },
+  },
 };
 
 const ProductSliderFive = ({
   spaceBottomClass,
   category,
   productGridStyleClass,
-  type
+  type,
 }) => {
   const { products } = useSelector((state) => state.product);
   const currency = useSelector((state) => state.currency);
   const { cartItems } = useSelector((state) => state.cart);
   const { wishlistItems } = useSelector((state) => state.wishlist);
   const { compareItems } = useSelector((state) => state.compare);
-  const prods = getProducts(products, category, type, 6)
+  const prods = getProducts(products, category, type, 6);
 
-  if(!prods?.length) return <p>No Products Found</p>
+  if (!prods?.length) return <p>No Products Found</p>;
 
   return (
     <div className={clsx("related-product-area", spaceBottomClass)}>
@@ -51,19 +51,15 @@ const ProductSliderFive = ({
               productGridStyleClass={productGridStyleClass}
               product={product}
               currency={currency}
-              cartItem={
-                cartItems.find((cartItem) => cartItem.id === product.id)
-              }
-              wishlistItem={
-                wishlistItems.find(
-                  (wishlistItem) => wishlistItem.id === product.id
-                )
-              }
-              compareItem={
-                compareItems.find(
-                  (compareItem) => compareItem.id === product.id
-                )
-              }
+              cartItem={cartItems.find(
+                (cartItem) => cartItem.id === product.id
+              )}
+              wishlistItem={wishlistItems.find(
+                (wishlistItem) => wishlistItem.id === product.id
+              )}
+              compareItem={compareItems.find(
+                (compareItem) => compareItem.id === product.id
+              )}
             />
           </SwiperSlide>
         ))}
@@ -75,7 +71,7 @@ const ProductSliderFive = ({
 ProductSliderFive.propTypes = {
   category: PropTypes.string,
   productGridStyleClass: PropTypes.string,
-  spaceBottomClass: PropTypes.string
+  spaceBottomClass: PropTypes.string,
 };
 
 export default ProductSliderFive;

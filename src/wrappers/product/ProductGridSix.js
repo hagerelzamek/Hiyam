@@ -4,12 +4,7 @@ import { useSelector } from "react-redux";
 import { getProducts } from "../../helpers/product";
 import ProductGridSingleSix from "../../components/product/ProductGridSingleSix";
 
-const ProductGridSix = ({
-  spaceBottomClass,
-  category,
-  type,
-  limit
-}) => {
+const ProductGridSix = ({ spaceBottomClass, category, type, limit }) => {
   const { products } = useSelector((state) => state.product);
   const currency = useSelector((state) => state.currency);
   const { cartItems } = useSelector((state) => state.cart);
@@ -26,19 +21,15 @@ const ProductGridSix = ({
               spaceBottomClass={spaceBottomClass}
               product={product}
               currency={currency}
-              cartItem={
-                cartItems.find((cartItem) => cartItem.id === product.id)
-              }
-              wishlistItem={
-                wishlistItems.find(
-                  (wishlistItem) => wishlistItem.id === product.id
-                )
-              }
-              compareItem={
-                compareItems.find(
-                  (compareItem) => compareItem.id === product.id
-                )
-              }
+              cartItem={cartItems.find(
+                (cartItem) => cartItem.id === product.id
+              )}
+              wishlistItem={wishlistItems.find(
+                (wishlistItem) => wishlistItem.id === product.id
+              )}
+              compareItem={compareItems.find(
+                (compareItem) => compareItem.id === product.id
+              )}
             />
           </div>
         );
@@ -51,8 +42,7 @@ ProductGridSix.propTypes = {
   spaceBottomClass: PropTypes.string,
   category: PropTypes.string,
   type: PropTypes.string,
-  limit: PropTypes.number
+  limit: PropTypes.number,
 };
-
 
 export default ProductGridSix;

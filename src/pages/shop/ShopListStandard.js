@@ -1,5 +1,5 @@
 import { Fragment, useState, useEffect } from "react";
-import Paginator from "react-hooks-paginator"; 
+import Paginator from "react-hooks-paginator";
 import { useSelector } from "react-redux";
 import { useLocation } from "react-router-dom";
 import { getSortedProducts } from "../../helpers/product";
@@ -25,7 +25,7 @@ const ShopListStandard = () => {
   const pageLimit = 15;
   let { pathname } = useLocation();
 
-  const getLayout = layout => {
+  const getLayout = (layout) => {
     setLayout(layout);
   };
 
@@ -60,11 +60,11 @@ const ShopListStandard = () => {
 
       <LayoutOne headerTop="visible">
         {/* breadcrumb */}
-        <Breadcrumb 
+        <Breadcrumb
           pages={[
-            {label: "Home", path: process.env.PUBLIC_URL + "/" },
-            {label: "Shop", path: process.env.PUBLIC_URL + pathname }
-          ]} 
+            { label: "Home", path: process.env.PUBLIC_URL + "/" },
+            { label: "Shop", path: process.env.PUBLIC_URL + pathname },
+          ]}
         />
 
         <div className="shop-area pt-95 pb-100">
@@ -76,7 +76,7 @@ const ShopListStandard = () => {
                   products={products}
                   getSortParams={getSortParams}
                   sideSpaceClass="mr-30"
-                /> 
+                />
               </div>
               <div className="col-lg-9 order-1 order-lg-2">
                 {/* shop topbar default */}

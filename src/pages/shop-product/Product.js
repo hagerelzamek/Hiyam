@@ -1,4 +1,4 @@
-import React, { Fragment } from "react"; 
+import React, { Fragment } from "react";
 import { useSelector } from "react-redux";
 import { useParams, useLocation } from "react-router-dom";
 import SEO from "../../components/seo";
@@ -12,8 +12,7 @@ const Product = () => {
   let { pathname } = useLocation();
   let { id } = useParams();
   const { products } = useSelector((state) => state.product);
-  const product = products.find(product => product.id === id);
-  
+  const product = products.find((product) => product.id === id);
 
   return (
     <Fragment>
@@ -24,11 +23,11 @@ const Product = () => {
 
       <LayoutOne headerTop="visible">
         {/* breadcrumb */}
-        <Breadcrumb 
+        <Breadcrumb
           pages={[
-            {label: "Home", path: process.env.PUBLIC_URL + "/" },
-            {label: "Shop Product", path: process.env.PUBLIC_URL + pathname }
-          ]} 
+            { label: "Home", path: process.env.PUBLIC_URL + "/" },
+            { label: "Shop Product", path: process.env.PUBLIC_URL + pathname },
+          ]}
         />
 
         {/* product description with image */}
@@ -42,14 +41,12 @@ const Product = () => {
         <ProductDescriptionTab
           spaceBottomClass="pb-90"
           productFullDesc={product.fullDescription}
-          productWeight={product.Weight}
-          productType={product.Type}
-          skinType={product.skin}
-         Materials={product.material}
-         userName1={product.user1}
-         userName2={product.user2}
-         reviewComment1={product.comment1}
-         reviewComment2={product.comment2}
+          productWeight={product.weight}
+          productType={product.type}
+          skinType={product.skinType}
+          Materials={product.material}
+          reviews={product.reviews}
+          productId={product.id}
         />
 
         {/* related product slider */}

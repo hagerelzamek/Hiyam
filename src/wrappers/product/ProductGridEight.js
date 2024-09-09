@@ -11,15 +11,15 @@ const settings = {
   grabCursor: true,
   breakpoints: {
     320: {
-      slidesPerView: 1
+      slidesPerView: 1,
     },
     640: {
-      slidesPerView: 2
+      slidesPerView: 2,
     },
     1200: {
-      slidesPerView: 3
-    }
-  }
+      slidesPerView: 3,
+    },
+  },
 };
 
 const ProductGridEight = ({
@@ -27,16 +27,16 @@ const ProductGridEight = ({
   type,
   limit,
   spaceBottomClass,
-  colorClass
+  colorClass,
 }) => {
   const { products } = useSelector((state) => state.product);
   const currency = useSelector((state) => state.currency);
   const { cartItems } = useSelector((state) => state.cart);
   const { wishlistItems } = useSelector((state) => state.wishlist);
   const { compareItems } = useSelector((state) => state.compare);
-  const prods = getProducts(products, category, type, limit)
+  const prods = getProducts(products, category, type, limit);
 
-  if(!prods?.length) return <p>No products found</p>;
+  if (!prods?.length) return <p>No products found</p>;
 
   return (
     <Swiper options={settings}>
@@ -48,19 +48,15 @@ const ProductGridEight = ({
               colorClass={colorClass}
               product={product}
               currency={currency}
-              cartItem={
-                cartItems.find((cartItem) => cartItem.id === product.id)
-              }
-              wishlistItem={
-                wishlistItems.find(
-                  (wishlistItem) => wishlistItem.id === product.id
-                )
-              }
-              compareItem={
-                compareItems.find(
-                  (compareItem) => compareItem.id === product.id
-                )
-              }
+              cartItem={cartItems.find(
+                (cartItem) => cartItem.id === product.id
+              )}
+              wishlistItem={wishlistItems.find(
+                (wishlistItem) => wishlistItem.id === product.id
+              )}
+              compareItem={compareItems.find(
+                (compareItem) => compareItem.id === product.id
+              )}
             />
           </SwiperSlide>
         );
@@ -75,7 +71,7 @@ ProductGridEight.propTypes = {
   colorClass: PropTypes.string,
   category: PropTypes.string,
   type: PropTypes.string,
-  limit: PropTypes.number
+  limit: PropTypes.number,
 };
 
 export default ProductGridEight;

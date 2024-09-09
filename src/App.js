@@ -1,6 +1,17 @@
-import { Suspense, lazy } from "react";
+import { Suspense, lazy, useEffect } from "react";
 import ScrollToTop from "./helpers/scroll-top";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
+import ResetPassword from "./pages/other/ResetPassword";
+import { useAuth } from "./context/Auth";
+import ForgotPassword from "./pages/other/ForgotPassword";
+import { store } from "./store/store";
+import { setProducts } from "./store/slices/product-slice";
+import { API_BASE_URL } from "./utils";
 
 // home pages
 const HomeFashion = lazy(() => import("./pages/home/HomeFashion"));
@@ -105,48 +116,97 @@ const Checkout = lazy(() => import("./pages/other/Checkout"));
 const NotFound = lazy(() => import("./pages/other/NotFound"));
 
 const App = () => {
+  const { authenticated } = useAuth();
+
+  useEffect(() => {
+    const getProduct = async () => {
+      try {
+        const res = await fetch(API_BASE_URL + "/product");
+        const data = await res.json();
+        const products = data?.map((product) => ({
+          id: product?.id,
+          sku: product?.id,
+          name: product?.title || "",
+          nameAr: product?.titleAr || "",
+          nameTr: product?.titleTr || "",
+          shortDescription: product?.brief || "",
+          shortDescriptionAr: product?.briefAr || "",
+          shortDescriptionTr: product?.briefTr || "",
+          fullDescription: product?.description || "",
+          fullDescriptionAr: product?.descriptionAr || "",
+          fullDescriptionTr: product?.descriptionTr || "",
+          category: [product?.category?.title],
+          categoryAr: [product?.category?.titleAr],
+          categoryTr: [product?.category?.titleTr],
+          tag: product?.tags,
+          stock: product?.quantity || 0,
+          price: product?.price || 0,
+          image: product?.images?.map((image) => image?.url),
+          new: product?.markedAsNew || false,
+          discount:
+            product?.price < product?.oldPrice
+              ? 0
+              : (product?.price / product?.oldPrice) * 100 || 0,
+          rating: product?.review?.rate || 0,
+          weight: product?.weight || 0,
+          type: product?.type || "",
+          skinType: product?.skinType || "",
+          material: product?.materials || "",
+          reviews: product?.reviews || [],
+        }));
+
+        // Dispatch products array directly
+        store.dispatch(setProducts(products));
+      } catch (error) {
+        console.error("Error fetching products:", error);
+      }
+    };
+
+    getProduct();
+  }, []);
+
+  const products = store.getState().product.products;
+  console.log(products);
+
   return (
-      <Router>
-        <ScrollToTop>
-          <Suspense
-            fallback={
-              <div className="flone-preloader-wrapper">
-                <div className="flone-preloader">
-                  <span></span>
-                  <span></span>
-                </div>
+    <Router>
+      <ScrollToTop>
+        <Suspense
+          fallback={
+            <div className="flone-preloader-wrapper">
+              <div className="flone-preloader">
+                <span></span>
+                <span></span>
               </div>
-            }
-          >
-            <Routes>
-              <Route
-                path={process.env.PUBLIC_URL + "/"}
-                element={<HomeCosmetics/>}
-              />
+            </div>
+          }
+        >
+          <Routes>
+            <Route
+              path={process.env.PUBLIC_URL + "/"}
+              element={<HomeCosmetics />}
+            />
 
-              {/* Homepages */}
-             
-              <Route
-                path={process.env.PUBLIC_URL + "/home-cosmetics"}
-                element={<HomeCosmetics/>}
-              />
-              
+            {/* Homepages */}
 
-              {/* Shop pages */}
-              <Route
-                path={process.env.PUBLIC_URL + "/shop-grid-standard"}
-                element={<ShopGridStandard/>}
-              />
-             
+            <Route
+              path={process.env.PUBLIC_URL + "/home-cosmetics"}
+              element={<HomeCosmetics />}
+            />
 
-              {/* Shop product pages */}
-              <Route
-                path={process.env.PUBLIC_URL + "/product/:id"}
-                element={<Product />}
-              />
-             
+            {/* Shop pages */}
+            <Route
+              path={process.env.PUBLIC_URL + "/shop-grid-standard"}
+              element={<ShopGridStandard />}
+            />
 
-              {/* Blog pages 
+            {/* Shop product pages */}
+            <Route
+              path={process.env.PUBLIC_URL + "/product/:id"}
+              element={<Product />}
+            />
+
+            {/* Blog pages 
               <Route
                 path={process.env.PUBLIC_URL + "/blog-standard"}
                 element={<BlogStandard/>}
@@ -164,46 +224,75 @@ const App = () => {
                 element={<BlogDetailsStandard/>
               /> */}
 
-              {/* Other pages */}
-              <Route
-                path={process.env.PUBLIC_URL + "/about"}
-                element={<About/>}
-              />
-              <Route
-                path={process.env.PUBLIC_URL + "/contact"}
-                element={<Contact/>}
-              />
-              <Route
-                path={process.env.PUBLIC_URL + "/my-account"}
-                element={<MyAccount/>}
-              />
-              <Route
-                path={process.env.PUBLIC_URL + "/login-register"}
-                element={<LoginRegister/>}
-              />
+            {/* Other pages */}
+            <Route
+              path={process.env.PUBLIC_URL + "/about"}
+              element={<About />}
+            />
+            <Route
+              path={process.env.PUBLIC_URL + "/contact"}
+              element={<Contact />}
+            />
+            <Route
+              path={process.env.PUBLIC_URL + "/my-account"}
+              element={
+                authenticated ? (
+                  <MyAccount />
+                ) : (
+                  <Navigate to={process.env.PUBLIC_URL + "/login-register"} />
+                )
+              }
+            />
+            <Route
+              path={process.env.PUBLIC_URL + "/login-register"}
+              element={
+                authenticated ? (
+                  <Navigate to={process.env.PUBLIC_URL + "/my-account"} />
+                ) : (
+                  <LoginRegister />
+                )
+              }
+            />
+            <Route
+              path={process.env.PUBLIC_URL + "/reset-password"}
+              element={
+                authenticated ? (
+                  <Navigate to={process.env.PUBLIC_URL + "/my-account"} />
+                ) : (
+                  <ResetPassword />
+                )
+              }
+            />
+            <Route
+              path={process.env.PUBLIC_URL + "/forgot-password"}
+              element={
+                authenticated ? (
+                  <Navigate to={process.env.PUBLIC_URL + "/my-account"} />
+                ) : (
+                  <ForgotPassword />
+                )
+              }
+            />
 
-              <Route
-                path={process.env.PUBLIC_URL + "/cart"}
-                element={<Cart/>}
-              />
-              <Route
-                path={process.env.PUBLIC_URL + "/wishlist"}
-                element={<Wishlist/>}
-              />
-              <Route
-                path={process.env.PUBLIC_URL + "/compare"}
-                element={<Compare/>}
-              />
-              <Route
-                path={process.env.PUBLIC_URL + "/checkout"}
-                element={<Checkout/>}
-              /> 
+            <Route path={process.env.PUBLIC_URL + "/cart"} element={<Cart />} />
+            <Route
+              path={process.env.PUBLIC_URL + "/wishlist"}
+              element={<Wishlist />}
+            />
+            <Route
+              path={process.env.PUBLIC_URL + "/compare"}
+              element={<Compare />}
+            />
+            <Route
+              path={process.env.PUBLIC_URL + "/checkout"}
+              element={<Checkout />}
+            />
 
-              <Route path="*" element={<NotFound/>} />
-            </Routes>
-          </Suspense>
-        </ScrollToTop>
-      </Router>
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </Suspense>
+      </ScrollToTop>
+    </Router>
   );
 };
 

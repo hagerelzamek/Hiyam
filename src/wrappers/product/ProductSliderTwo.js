@@ -13,18 +13,18 @@ const settings = {
   spaceBetween: 30,
   breakpoints: {
     320: {
-      slidesPerView: 1
+      slidesPerView: 1,
     },
     576: {
-      slidesPerView: 2
+      slidesPerView: 2,
     },
     768: {
-      slidesPerView: 3
+      slidesPerView: 3,
     },
     1024: {
-      slidesPerView: 4
-    }
-  }
+      slidesPerView: 4,
+    },
+  },
 };
 
 const ProductSliderTwo = ({ spaceBottomClass, category }) => {
@@ -46,29 +46,25 @@ const ProductSliderTwo = ({ spaceBottomClass, category }) => {
         />
         {prods?.length ? (
           <Swiper options={settings}>
-              {prods.map(product => (
-                <SwiperSlide key={product.id}>
-                  <ProductGridSingleThirteen
-                    product={product}
-                    currency={currency}
-                    cartItem={
-                      cartItems.find((cartItem) => cartItem.id === product.id)
-                    }
-                    wishlistItem={
-                      wishlistItems.find(
-                        (wishlistItem) => wishlistItem.id === product.id
-                      )
-                    }
-                    compareItem={
-                      compareItems.find(
-                        (compareItem) => compareItem.id === product.id
-                      )
-                    }
-                  />
-                </SwiperSlide>
-              ))}
+            {prods.map((product) => (
+              <SwiperSlide key={product.id}>
+                <ProductGridSingleThirteen
+                  product={product}
+                  currency={currency}
+                  cartItem={cartItems.find(
+                    (cartItem) => cartItem.id === product.id
+                  )}
+                  wishlistItem={wishlistItems.find(
+                    (wishlistItem) => wishlistItem.id === product.id
+                  )}
+                  compareItem={compareItems.find(
+                    (compareItem) => compareItem.id === product.id
+                  )}
+                />
+              </SwiperSlide>
+            ))}
           </Swiper>
-        ): null}
+        ) : null}
       </div>
     </div>
   );
@@ -76,7 +72,7 @@ const ProductSliderTwo = ({ spaceBottomClass, category }) => {
 
 ProductSliderTwo.propTypes = {
   category: PropTypes.string,
-  spaceBottomClass: PropTypes.string
+  spaceBottomClass: PropTypes.string,
 };
 
 export default ProductSliderTwo;
